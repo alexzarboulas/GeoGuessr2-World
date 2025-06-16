@@ -1,0 +1,9 @@
+# Ignore large model weights and image folders
+*.pth
+*.jpg
+*.jpeg
+*.png
+data/raw_images/
+data/hierarchy_L1/
+data/hierarchy_L3/
+data/hierarchy_L5/

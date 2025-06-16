@@ -1,0 +1,63 @@
+import os
+import torch
+
+#mapping for different hiearchy levels (used in testing output)
+
+#recursively collect leaf folder maps
+def build_label_map(dataset_root, output_path):
+
+    label_map = {}
+
+    for root, dirs, files in os.walk(dataset_root):
+        if any(f.lower().endswith(('.jpg', '.jpeg', '.png')) for f in files):
+            rel_path = os.path.relpath(root, dataset_root).replace("\\", "/")
+            label_map[rel_path] = len(label_map)
+
+    torch.save(label_map, output_path)
+    print(f"✅ Saved label map with {len(label_map)} classes to {output_path}")
+
+
+#build the mapping
+def build_hierarchy_mapping(child_map_path, parent_map_path, parent_level, output_path):
+  
+    child_map = torch.load(child_map_path)
+    parent_map = torch.load(parent_map_path)
+
+    mapping = {}
+    for child_id, child_idx in child_map.items():
+        parent_id = "/".join(child_id.split("/")[:parent_level])
+        if parent_id in parent_map:
+            parent_idx = parent_map[parent_id]
+            mapping.setdefault(parent_idx, []).append(child_idx)
+
+    torch.save(mapping, output_path)
+    print(f"Saved mapping to {output_path}")
+
+#create the label maps for each hierarchy level
+build_label_map("../../data/hierarchy_L1", "label_map_L1.pth")
+build_label_map("../../data/hierarchy_L3", "label_map_L3.pth")
+build_label_map("../../data/hierarchy_L5", "label_map_L5.pth")
+build_label_map("../../data/raw_images", "label_map_L8.pth")  # L8
+
+## Create hierarchy mappings
+
+build_hierarchy_mapping(
+    child_map_path="label_map_L3.pth",
+    parent_map_path="label_map_L1.pth",
+    parent_level=1,
+    output_path="l1_to_l3.pth"
+)
+
+build_hierarchy_mapping(
+    child_map_path="label_map_L5.pth",
+    parent_map_path="label_map_L3.pth",
+    parent_level=3,
+    output_path="l3_to_l5.pth"
+)
+
+build_hierarchy_mapping(
+    child_map_path="label_map_L8.pth",
+    parent_map_path="label_map_L5.pth",
+    parent_level=5,
+    output_path="l5_to_l8.pth"
+)
