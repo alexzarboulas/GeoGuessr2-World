@@ -23,11 +23,12 @@ While the final classifier struggles with accuracy, particularly at finer levels
 
 ## Sample Output
 
+### Successful Test
 <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;">
 
   <div style="flex: 1; text-align: center;">
-    <strong>Input Image</strong><br>
-    <img src="scripts/testing/tests/test_USA.jpg" alt="Test USA" width="300"/>
+    <strong>South Africa</strong><br>
+    <img src="scripts/testing/tests/test_South_Africa.jpg" alt="Test South Africa" width="300"/>
   </div>
 
   <div style="flex: 1; text-align: center;">
