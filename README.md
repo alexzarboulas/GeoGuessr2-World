@@ -32,7 +32,7 @@ While the final classifier struggles with accuracy, particularly at finer levels
       <img src="scripts/testing/tests/test_South_Africa.jpg" alt="Test South Africa" width="100%"/>
     </td>
     <td align="center" width="70%">
-      <strong>Top-k Prediction Map</strong><br>
+      <strong>Top-k Prediction Map (k=100)</strong><br>
       <img src="scripts/testing/results/test_prediction_map_test_South_Africa.jpg" alt="Prediction Map" width="100%"/>
     </td>
   </tr>
@@ -47,7 +47,7 @@ While the final classifier struggles with accuracy, particularly at finer levels
       <img src="scripts/testing/tests/test_USA.jpg" alt="Test USA" width="100%"/>
     </td>
     <td align="center" width="70%">
-      <strong>Top-k Prediction Map</strong><br>
+      <strong>Top-k Prediction Map (k=100)</strong><br>
       <img src="scripts/testing/results/test_prediction_map_test_USA.jpg" alt="Prediction Map" width="100%"/>
     </td>
   </tr>
@@ -63,9 +63,9 @@ While the final classifier struggles with accuracy, particularly at finer levels
 
 ### `visualize_valid_grids.py`
 - Generates an interactive HTML map of all Level 8 grid cells, color-coded by status:  
-  - 🟢 Green: Grid intersects land and has image data  
-  - 🔵 Blue: Grid is ocean-only  
-  - ⚪ Gray: Grid intersects land but no usable images found
+  - Green: Grid intersects land and has image data  
+  - Blue: Grid is ocean-only  
+  - Gray: Grid intersects land but no usable images found
 
 ### `organize_folders.py`
 - Converts nested L8 folder structure into flat image datasets for L1, L3, and L5 levels  
@@ -88,7 +88,6 @@ While the final classifier struggles with accuracy, particularly at finer levels
 ### `hierarchical_predict_and_visualize.py`
 - Performs hierarchical inference on a single test image (`test.jpg`)  
 - Passes image through L1 → L3 → L5 → L8 models using dynamic top-k and confidence thresholds  
-- Applies temperature scaling per level if `*_temperature.txt` files are present (future implementation)  
 - Uses hierarchical masking to reduce the label space at each level
 
 ### `generate_recursive_grids()` (in `grid_utils.py`)
