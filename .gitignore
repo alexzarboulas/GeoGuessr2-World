@@ -1,6 +1,7 @@
 # Ignore large model weights and image folders
 *.jpg
 !scripts/testing/results/*.jpg
+!scripts/grid_visualization/*.jpg
 *.jpeg
 *.png
 data/raw_images/

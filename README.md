@@ -9,7 +9,7 @@ The finest level divides the Earth into 65,536 equally sized grid cells.
 
 ## Inspiration & Evolution
 
-I've been a geography nerd for years and a longtime fan of **GeoGuessr**, a game where you're dropped into a random location on Google Street View and must guess where you are in the world.  
+I've been a geography nerd for years and a longtime fan of GeoGuessr, a game where you're dropped into a random location on Google Street View and must guess where you are in the world.  
 This project started as an attempt to create a GeoGuessr "bot" to automate that guessing process. It evolved from this simple idea into a full ML pipeline spanning data collection, model training, geospatial visualization, and hierarchical inference.
 
 While the final classifier struggles with accuracy, particularly at finer levels (L5 and L8), the project:
@@ -62,7 +62,7 @@ While the final classifier struggles with accuracy, particularly at finer levels
 - Designed for execution across ~16,000 L8 regions
 
 ### `visualize_valid_grids.py`
-- Generates an interactive HTML map (shown as a .jpg below) of all Level 8 grid cells, color-coded by status:  
+- Generates an interactive HTML map of all Level 8 grid cells, color-coded by status:  
   - Green: Grid intersects land and has image data  
   - Blue: Grid is ocean-only  
   - Gray: Grid intersects land but no usable images found
