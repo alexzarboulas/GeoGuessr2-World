@@ -1,11 +1,32 @@
+"""
+Builds label maps and parent-child mappings between hierarchy levels.
+
+Outputs:
+- label_map_L*.pth: Maps folder paths to integer class labels
+- l1_to_l3.pth, l3_to_l5.pth, l5_to_l8.pth: Maps parent class indices to child class indices
+
+These are used during masked inference to propagate predictions across
+a spatial hierarchy of geographic classes.
+
+Author: Alexander Zarboulas
+Date: 2025-06-18
+"""
+
+#Import libraries
 import os
 import torch
 
-#mapping for different hiearchy levels (used in testing output)
-
-#recursively collect leaf folder maps
 def build_label_map(dataset_root, output_path):
+    """
+    Recursively scans folders to assign a unique integer label to each class.
 
+    Args:
+        dataset_root (str): Root directory of the dataset (e.g., ../data/hierarchy_L1).
+        output_path (str): File to save the label map (.pth).
+
+    Output:
+        A dictionary mapping folder paths (relative) to integer class labels.
+    """
     label_map = {}
 
     for root, dirs, files in os.walk(dataset_root):
@@ -14,12 +35,22 @@ def build_label_map(dataset_root, output_path):
             label_map[rel_path] = len(label_map)
 
     torch.save(label_map, output_path)
-    print(f"✅ Saved label map with {len(label_map)} classes to {output_path}")
+    print(f"Saved label map with {len(label_map)} classes to {output_path}")
 
 
-#build the mapping
 def build_hierarchy_mapping(child_map_path, parent_map_path, parent_level, output_path):
-  
+    """
+    Constructs a parent-to-child mapping across two hierarchy levels.
+
+    Args:
+        child_map_path (str): Path to the label map for the child level.
+        parent_map_path (str): Path to the label map for the parent level.
+        parent_level (int): Number of path segments to define the parent (e.g., 3 for L3).
+        output_path (str): File to save the mapping (.pth).
+
+    Output:
+        A dictionary: {parent_class_index: [child_class_indices]}.
+    """
     child_map = torch.load(child_map_path)
     parent_map = torch.load(parent_map_path)
 
@@ -31,16 +62,15 @@ def build_hierarchy_mapping(child_map_path, parent_map_path, parent_level, outpu
             mapping.setdefault(parent_idx, []).append(child_idx)
 
     torch.save(mapping, output_path)
-    print(f"Saved mapping to {output_path}")
+    print(f"Saved parent-child mapping to {output_path}")
 
-#create the label maps for each hierarchy level
+#Build label maps for each hierarchy level
 build_label_map("../../data/hierarchy_L1", "label_map_L1.pth")
 build_label_map("../../data/hierarchy_L3", "label_map_L3.pth")
 build_label_map("../../data/hierarchy_L5", "label_map_L5.pth")
 build_label_map("../../data/raw_images", "label_map_L8.pth")  # L8
 
-## Create hierarchy mappings
-
+#Build hierarchy mappings between levels
 build_hierarchy_mapping(
     child_map_path="label_map_L3.pth",
     parent_map_path="label_map_L1.pth",

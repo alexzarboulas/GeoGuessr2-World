@@ -1,3 +1,19 @@
+"""
+Trains a ResNet-50 model on a single hierarchy level (L8).
+
+Workflow:
+- Applies data augmentation (resize, color jitter, horizontal flip)
+- Splits dataset into 80/20 train/validation subsets
+- Trains using cross-entropy loss and tracks:
+    • Top-1 accuracy
+    • Top-10 accuracy
+- Saves the trained model to models/hierarchy_L*.pth
+
+Author: Alexander Zarboulas
+Date: 2025-06-18
+"""
+
+#Import libraries
 import os
 import torch
 import torchvision.transforms as transforms
