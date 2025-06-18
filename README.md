@@ -62,10 +62,16 @@ While the final classifier struggles with accuracy, particularly at finer levels
 - Designed for execution across ~16,000 L8 regions
 
 ### `visualize_valid_grids.py`
-- Generates an interactive HTML map of all Level 8 grid cells, color-coded by status:  
+- Generates an interactive HTML map (shown as a .jpg below) of all Level 8 grid cells, color-coded by status:  
   - Green: Grid intersects land and has image data  
   - Blue: Grid is ocean-only  
   - Gray: Grid intersects land but no usable images found
+
+<div align="center">
+  <img src="scripts/grid_visualization/valid_grids_map.jpg" alt="Valid Grids Visualization" width="80%">
+  <br>
+  <em>Sample output: L8 grid cell visualization from visualize_valid_grids.py</em>
+</div>
 
 ### `organize_folders.py`
 - Converts nested L8 folder structure into flat image datasets for L1, L3, and L5 levels  
