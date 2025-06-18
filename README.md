@@ -21,7 +21,7 @@ While the final classifier struggles with accuracy, particularly at finer levels
 
 ---
 
-## Sample Output
+## Sample Tests (more can be found in scripts/testing)
 
 ### Successful Test
 
