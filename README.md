@@ -21,6 +21,26 @@ While the final classifier struggles with accuracy, particularly at finer levels
 
 ---
 
+## Sample Outputs
+
+### Successful Test – USA
+
+**Input Image**  
+![Test USA](scripts/testing/tests/test_USA.jpg)
+
+**Prediction Map**  
+![Prediction USA](scripts/testing/results/test_prediction_map_test_USA.png)
+
+---
+
+### Failure Test – Greece
+
+**Input Image**  
+![Test Greece](scripts/testing/tests/test_Greece.jpg)
+
+**Prediction Map**  
+![Prediction Greece](scripts/testing/results/test_prediction_map_test_Greece.png)
+
 ## Project Structure & Pipeline
 
 ### `fetch_images.py`
