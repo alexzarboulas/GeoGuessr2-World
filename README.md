@@ -21,25 +21,21 @@ While the final classifier struggles with accuracy, particularly at finer levels
 
 ---
 
-## Sample Outputs
+## Sample Output
 
-### Successful Test – USA
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;">
 
-**Input Image**  
-![Test USA](scripts/testing/tests/test_USA.jpg)
+  <div style="flex: 1; text-align: center;">
+    <strong>Input Image</strong><br>
+    <img src="scripts/testing/tests/test_USA.jpg" alt="Test USA" width="300"/>
+  </div>
 
-**Prediction Map**  
-![Prediction USA](scripts/testing/results/test_prediction_map_test_USA.png)
+  <div style="flex: 1; text-align: center;">
+    <strong>Top-k Prediction Map</strong><br>
+    <img src="scripts/testing/results/test_prediction_map_test_USA.jpg" alt="Prediction Map" width="300"/>
+  </div>
 
----
-
-### Failure Test – Greece
-
-**Input Image**  
-![Test Greece](scripts/testing/tests/test_Greece.jpg)
-
-**Prediction Map**  
-![Prediction Greece](scripts/testing/results/test_prediction_map_test_Greece.png)
+</div>
 
 ## Project Structure & Pipeline
 
