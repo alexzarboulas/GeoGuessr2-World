@@ -38,6 +38,21 @@ While the final classifier struggles with accuracy, particularly at finer levels
   </tr>
 </table>
 
+### Unsuccessful Test
+
+<table>
+  <tr>
+    <td align="center" width="30%">
+      <strong>Input Image (USA)</strong><br>
+      <img src="scripts/testing/tests/test_USA.jpg" alt="Test USA" width="100%"/>
+    </td>
+    <td align="center" width="70%">
+      <strong>Top-k Prediction Map</strong><br>
+      <img src="scripts/testing/results/test_prediction_map_test_USA.jpg" alt="Prediction Map" width="100%"/>
+    </td>
+  </tr>
+</table>
+
 ## Project Structure & Pipeline
 
 ### `fetch_images.py`
