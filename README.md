@@ -79,14 +79,13 @@ To run your own predictions:
 1. Place your test image in `/scripts/testing/tests/` and update the `IMAGE_PATH` in `hierarchical_predict_and_visualize.py`.
 2. Download and place the following files:
    - In `/models/`: `hierarchy_L1.pth`, `hierarchy_L3.pth`, `hierarchy_L5.pth`, `hierarchy_L8.pth`
-   - In `/scripts/label_maps/`: 
-     - `label_map_L1.pth`, `label_map_L3.pth`, `label_map_L5.pth`, `label_map_L8.pth`
+   - In `/scripts/label_maps/`:  
+     - `label_map_L1.pth`, `label_map_L3.pth`, `label_map_L5.pth`, `label_map_L8.pth`  
      - `l1_to_l3.pth`, `l3_to_l5.pth`, `l5_to_l8.pth`
 3. Run:  
-```bash
-cd scripts/testing  
-python hierarchical_predict_and_visualize.py
----
+   ```bash
+   cd scripts/testing  
+   python hierarchical_predict_and_visualize.py
 
 ## Challenges
 
