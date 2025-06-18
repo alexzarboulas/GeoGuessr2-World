@@ -28,12 +28,12 @@ While the final classifier struggles with accuracy, particularly at finer levels
 
   <div style="flex: 1; text-align: center;">
     <strong>South Africa</strong><br>
-    <img src="scripts/testing/tests/test_South_Africa.jpg" alt="Test South Africa" width="300"/>
+    <img src="scripts/testing/tests/test_South_Africa.jpg" alt="Test South Africa" width="100%"/>
   </div>
 
-  <div style="flex: 1; text-align: center;">
+  <div style="flex: 2; text-align: center;">
     <strong>Top-k Prediction Map</strong><br>
-    <img src="scripts/testing/results/test_prediction_map_test_South_Africa.jpg" alt="Prediction Map" width="300"/>
+    <img src="scripts/testing/results/test_prediction_map_test_South_Africa.jpg" alt="Prediction Map" width="100%"/>
   </div>
 
 </div>
