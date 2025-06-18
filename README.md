@@ -68,7 +68,7 @@ While the final classifier struggles with accuracy, particularly at finer levels
   - Gray: Grid intersects land but no usable images found
 
 <div align="center">
-  <img src="scripts/grid_visualization/valid_grids_map.jp" alt="Valid Grids Visualization" width="80%">
+  <img src="scripts/grid_visualization/valid_grids_map.jpg" alt="Valid Grids Visualization" width="80%">
   <br>
   <em>Sample output: L8 grid cell visualization from visualize_valid_grids.py</em>
 </div>
