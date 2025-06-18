@@ -1,5 +1,4 @@
 # Ignore large model weights and image folders
-*.pth
 *.jpg
 *.jpeg
 *.png
