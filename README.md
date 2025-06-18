@@ -24,19 +24,19 @@ While the final classifier struggles with accuracy, particularly at finer levels
 ## Sample Output
 
 ### Successful Test
-<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;">
 
-  <div style="flex: 1; text-align: center;">
-    <strong>South Africa</strong><br>
-    <img src="scripts/testing/tests/test_South_Africa.jpg" alt="Test South Africa" width="100%"/>
-  </div>
-
-  <div style="flex: 2; text-align: center;">
-    <strong>Top-k Prediction Map</strong><br>
-    <img src="scripts/testing/results/test_prediction_map_test_South_Africa.jpg" alt="Prediction Map" width="100%"/>
-  </div>
-
-</div>
+<table>
+  <tr>
+    <td align="center" width="30%">
+      <strong>Input Image (South Africa)</strong><br>
+      <img src="scripts/testing/tests/test_South_Africa.jpg" alt="Test South Africa" width="100%"/>
+    </td>
+    <td align="center" width="70%">
+      <strong>Top-k Prediction Map</strong><br>
+      <img src="scripts/testing/results/test_prediction_map_test_South_Africa.jpg" alt="Prediction Map" width="100%"/>
+    </td>
+  </tr>
+</table>
 
 ## Project Structure & Pipeline
 
