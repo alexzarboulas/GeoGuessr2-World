@@ -7,7 +7,7 @@ The finest level divides the Earth into 65,536 equally sized grid cells.
 
 ---
 
-##Inspiration & Evolution
+## Inspiration & Evolution
 
 I've been a geography nerd for years and a longtime fan of **GeoGuessr**, a game where you're dropped into a random location on Google Street View and must guess where you are in the world.  
 This project started as an attempt to create a GeoGuessr "bot" to automate that guessing process. It evolved from this simple idea into a full ML pipeline spanning data collection, model training, geospatial visualization, and hierarchical inference.
