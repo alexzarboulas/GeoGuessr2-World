@@ -33,7 +33,7 @@ While the final classifier struggles with accuracy, particularly at finer levels
 
   <div style="flex: 1; text-align: center;">
     <strong>Top-k Prediction Map</strong><br>
-    <img src="scripts/testing/results/test_prediction_map_test_USA.jpg" alt="Prediction Map" width="300"/>
+    <img src="scripts/testing/results/test_prediction_map_test_South_Africa.jpg" alt="Prediction Map" width="300"/>
   </div>
 
 </div>
